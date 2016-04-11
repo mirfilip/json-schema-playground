@@ -6,7 +6,7 @@ $inputData = json_decode($argv[1]);
 $retriever = new \JsonSchema\Uri\UriRetriever;
 $jsonSchemaPath = __DIR__ . '/schema/';
 
-$schema = $retriever->retrieve('file://' . $jsonSchemaPath . '203.json');
+$schema = $retriever->retrieve('file://' . $jsonSchemaPath . '211.json');
 
 $resolver = new \JsonSchema\RefResolver($retriever);
 $resolver->resolve($schema, 'file://' . $jsonSchemaPath);
