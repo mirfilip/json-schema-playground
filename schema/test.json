@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "test",
+  "anyOf": [
+    {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": true,
+      "properties": {
+        "foo": {
+          "anyOf": [
+            {"type": "null"},
+            {"type": "string", "minLength": 2, "maxLength": 65535}
+          ]
+        },
+        "bar": {
+          "anyOf": [
+            {"type": "null"},
+            {"type": "string", "maxLength": 255}
+          ]
+        },
+        "baz": {
+          "type": "object",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^[a-z0-9]{1,255}$": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "string", "maxLength": 2048}
+              },
+              "required": ["value"],
+              "additionalProperties": false,
+              "maxProperties": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "anyOf": [
+        {"type": "object", "maxProperties": 0},
+        {"type": "array", "maxItems": 0},
+        {"type": "null"}
+      ]
+    }
+  ]
+}

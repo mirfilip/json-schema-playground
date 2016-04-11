@@ -1,0 +1,12 @@
+{
+    "name": "miroslawfilip/json-schema-repro",
+    "require": {
+        "justinrainbow/json-schema": "^1.6"
+    },
+    "authors": [
+        {
+            "name": "Mirosław Filip",
+            "email": "mirfilip+github@gmail.com"
+        }
+    ]
+}
